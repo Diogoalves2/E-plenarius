@@ -1,0 +1,144 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset CSS personalizado */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Rubik', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Estilos personalizados para títulos e textos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Estilos personalizados para formulários */
+@layer components {
+  .form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply bg-white border border-primary-500 text-primary-500 hover:bg-primary-50 font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6;
+  }
+}
+
+/* Estilos personalizados adicionais podem ser adicionados aqui */
+
+/* Adicionar no início do arquivo */
+:root {
+  --color-primary: #1E40AF;
+  --color-primary-light: #3B82F6;
+  --color-primary-dark: #1E3A8A;
+  
+  --color-secondary: #047857;
+  --color-secondary-light: #10B981;
+  --color-secondary-dark: #065F46;
+  
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+}
+
+/* Aplicar variáveis às classes Tailwind */
+.bg-primary-500 {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-primary-600 {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.bg-primary-100 {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, white) !important;
+}
+
+.text-primary-500, .text-primary-700, .text-primary-800 {
+  color: var(--color-primary) !important;
+}
+
+.bg-secondary-500 {
+  background-color: var(--color-secondary) !important;
+}
+
+.bg-secondary-600 {
+  background-color: var(--color-secondary-dark) !important;
+}
+
+.text-secondary-500, .text-secondary-700 {
+  color: var(--color-secondary) !important;
+}
+
+/* Estilos para o modo de alto contraste */
+body.high-contrast {
+  --color-primary: #0000FF;
+  --color-primary-light: #4040FF;
+  --color-primary-dark: #0000CC;
+  
+  --color-secondary: #008000;
+  --color-secondary-light: #40A040;
+  --color-secondary-dark: #006600;
+  
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+body.high-contrast .bg-white {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #FFFFFF;
+}
+
+body.high-contrast input, 
+body.high-contrast select, 
+body.high-contrast textarea {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #FFFFFF !important;
+}
+
+body.high-contrast .text-gray-500,
+body.high-contrast .text-gray-600,
+body.high-contrast .text-gray-700,
+body.high-contrast .text-dark-500 {
+  color: #FFFFFF !important;
+}
+
+/* Ajustar tamanho da fonte base */
+html {
+  font-size: var(--font-size-base);
+} 
